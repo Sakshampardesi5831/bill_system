@@ -1,6 +1,6 @@
 export const ApiServiceConfig={
-    saveBillDetails:"/api/save-bill-details",
-    getAllBillDetails:"/api/get-all-bill-details",
-    uploadImages:"/api/upload-images",
-    deleteBills:"/api/delete-bill-details"
+    saveBillDetails:"/save-bill-details",
+    getAllBillDetails:"/get-all-bill-details",
+    uploadImages:"/upload-images",
+    deleteBills:"/delete-bill-details"
 }

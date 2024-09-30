@@ -1,10 +1,10 @@
 import axios from "axios";
-
+const baseURL = "/api"
 export const axiosInstance = axios.create({
-    baseURL: 'https://bill-system-eight.vercel.app/',
-    timeout: 30000,
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  });
-  
+  baseURL: baseURL,
+  timeout: 1000000,
+  headers: {
+    "Content-Type": "application/json",
+    accept: "application/json",
+  },
+});

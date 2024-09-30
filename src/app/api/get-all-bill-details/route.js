@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { connection } from "@/models/connect";
-export async function GET(request) {
+export async function GET() {
     try {
         const mysqlConnection=await connection();
         const sql=`SELECT id as id, user_commodity as commodity,order_quantity as orderQuantity,purchase_rate as purchaseRate,
