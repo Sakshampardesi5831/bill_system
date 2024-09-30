@@ -14,7 +14,7 @@ export async function POST(request) {
       net_profit: reqJsonObject.netProfit,
       total_cost_profit: reqJsonObject.totalCost,
       sales_rate: reqJsonObject.salesRate,
-      image_url: reqJsonObject.url,
+      image_url: reqJsonObject.url|| "",
     };
     const sql = generateInsertQuery("bill_details", savingObject);
     const values = Object.values(savingObject);
