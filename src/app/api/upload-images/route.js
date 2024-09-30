@@ -3,7 +3,8 @@ import path from "path";
 import fs from "fs";
 import { v4 as uuidv4 } from "uuid";
 import { v2 as cloudinary } from "cloudinary";
-const UPLOAD_DIR = path.resolve(process.env.ROOT_PATH || "", "public/uploads");
+//const UPLOAD_DIR = path.resolve(process.env.ROOT_PATH || "", "public/uploads");
+const UPLOAD_DIR = path.resolve("/tmp/uploads");
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -22,7 +23,7 @@ export async function POST(request) {
         const buffer = Buffer.from(await file.arrayBuffer());
 
         if (!fs.existsSync(UPLOAD_DIR)) {
-          fs.mkdirSync(UPLOAD_DIR);
+          fs.mkdirSync(UPLOAD_DIR, { recursive: true });
         }
         const originalFileName = file.name;
         const fileExtension = path.extname(originalFileName);
